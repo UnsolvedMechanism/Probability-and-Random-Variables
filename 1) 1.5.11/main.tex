@@ -102,12 +102,11 @@
 \title{
     Solution to problem number 1.5.11
 }
-% \author{
-%     Yash Patil$^{*}$
-%     \thanks{
-%         *email id: ee22btech11058@iith.ac.in
-%     }
-% }	
+\author{ G V V Sharma$^{*}$% <-this % stops a space
+	\thanks{*The author is with the Department
+		of Electrical Engineering, Indian Institute of Technology, Hyderabad
+		502285 India e-mail:  gadepall@iith.ac.in. All content in this manual is released under GNU GPL.  Free and open source.}	
+}
 %\title{
 %	\logo{Matrix Analysis through Octave}{\begin{center}\includegraphics[scale=.24]{tlc}\end{center}}{}{HAMDSP}
 %}
@@ -228,53 +227,62 @@ Now, the side lengths a, b and c can be calculated as:
     BC &= C-B \\
     &=\myvec{-3+4 \\ -5-6 } = \myvec{ 1\\-11}\\
     CA &= A-C\\ 
-    &=\myvec{ 1+3 \\ -1+5 } = \begin{pmatrix} 4\\4 \end{pmatrix}
+    &=\myvec{ 1+3 \\ -1+5 } = \myvec{4\\4}
 \end{align}
 Now, the side lengths a, b and c can be calculated as:
 \begin{align}
     a &= \sqrt{BC^{\top}.BC}\\
-    &= \sqrt{\begin{pmatrix} 1&-11 \end{pmatrix} \begin{pmatrix} 1\\-11 \end{pmatrix}}\\
+    &= \sqrt{\myvec{1&-11} \myvec{1\\-11}}\\
     &= \sqrt{1+121}\\
     &=\sqrt{122}
 \end{align}
 \begin{align}
     b &= \sqrt{CA^{\top}.CA}\\
-    &= \sqrt{\begin{pmatrix} 4&4 \end{pmatrix} \begin{pmatrix} 4\\4 \end{pmatrix}}\\
+    &= \sqrt{\myvec{4&4} \myvec{4\\4}}\\
     &= \sqrt{16+16}\\
     &=\sqrt{32}
 \end{align}
 \begin{align}
     c &= \sqrt{AB^{\top}.AB}\\
-    &= \sqrt{\begin{pmatrix} -5&7 \end{pmatrix} \begin{pmatrix} -5\\7 \end{pmatrix}}\\
+    &= \sqrt{\myvec{-5&7} \myvec{-5\\7}}\\
     &= \sqrt{25+49}\\
     &=\sqrt{74}
 \end{align}
 AB being a straight line with $F_3$ a point on it, it can be said that
 \begin{align}
     AB &= AF_3 + BF_3\\
-    % \text{and similary,}\\
     BC &= BD_3 + CD_3\\
-    CA &= AE_3 + BE_3
-\end{align}
-\begin{align}
+    CA &= AE_3 + BE_3\\\\
+% \end{align}
+% \begin{align}
     \therefore 
     c &= m+n,\\
     a &= n+p, \\
-    b &= m+p
+    b &= m+p \\\\
+    \therefore 
+    \myvec{0&0&1}\myvec{a\\b\\c} &= \myvec{1&1&0}\myvec{m\\n\\p}, \\
+    \myvec{1&0&0}\myvec{a\\b\\c} &= \myvec{0&1&1}\myvec{m\\n\\p}, \\
+    \myvec{0&1&0}\myvec{a\\b\\c} &= \myvec{1&0&1}\myvec{m\\n\\p},
 \end{align}
 adding these 3 equations (1), (2) and (3) gives:
 \begin{align}
-    2(m+n+p) &= a + b + c\\
-    \implies m+n+p &= (a+b+c)/2 \\&= s \\&= \frac{\sqrt{74}+\sqrt{32}+\sqrt{122}}{2}
+    % 2(m+n+p) &= a + b + c\\
+    2\myvec{1&1&1}\myvec{m\\n\\p} &= \myvec{1&1&1}\myvec{a\\b\\c}\\
+    \implies\myvec{1&1&1}\myvec{m\\n\\p} &= \frac{1}{2}\myvec{1&1&1}\myvec{a\\b\\c}\\
+    % \implies m+n+p 
+    % &= \frac{a+b+c}{2} \\
+    % &= s \\
+    &= \frac{\sqrt{74}+\sqrt{32}+\sqrt{122}}{2}
 \end{align}
 subtracting equations (1), (2) and (3) from the above gives us the values of p, m and n respectively
 \begin{align}
-    \therefore m &= s-a\\
-    &= \frac{\sqrt{74}+\sqrt{32}-\sqrt{122}}{2}\\
-    n &= s-b\\
-    &= \frac{\sqrt{74}+\sqrt{122}-\sqrt{32}}{2}\\
-    p &= s-c\\
-    &=\frac{\sqrt{122}+\sqrt{32}-\sqrt{74}}{2}
+    \therefore 
+    \myvec{1&0&0}\myvec{m\\n\\p}&=\frac{1}{2}\myvec{-1&1&1}\myvec{a\\b\\c}\\
+    \implies m&= \frac{\sqrt{74}+\sqrt{32}-\sqrt{122}}{2},\\\\
+    \myvec{0&1&0}\myvec{m\\n\\p}&=\frac{1}{2}\myvec{1&-1&1}\myvec{a\\b\\c}\\
+    \implies n&= \frac{\sqrt{74}+\sqrt{122}-\sqrt{32}}{2},\\\\
+    \myvec{0&0&1}\myvec{m\\n\\p}&=\frac{1}{2}\myvec{1&1&-1}\myvec{a\\b\\c}\\
+    \implies p&= \frac{\sqrt{122}+\sqrt{32}-\sqrt{74}}{2}
 \end{align}
 
 \end{document}

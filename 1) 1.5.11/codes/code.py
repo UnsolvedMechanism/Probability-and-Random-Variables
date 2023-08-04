@@ -7,9 +7,9 @@ B = np.array([-4,6])
 C = np.array([-3,-5])
 
 #finding sidelengths a, b & c
-a = np.absolute(sqrt((B-C)@(B-C)))
-b = np.absolute(sqrt((A-C)@(A-C)))
-c = np.absolute(sqrt(B-A)@(B-A))
+a = sqrt((B-C)@(B-C))
+b = sqrt((A-C)@(A-C))
+c = sqrt((B-A)@(B-A))
 
 s = (a+b+c)/2
 
