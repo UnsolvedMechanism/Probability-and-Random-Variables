@@ -102,11 +102,7 @@
 \title{
     Solution to problem number 1.5.11
 }
-\author{ Yash Patil - EE22BTECH11058$^{*}$% <-this % stops a space
-	\thanks{*The author is with the Department
-		of Electrical Engineering, Indian Institute of Technology, Hyderabad
-		502285 India e-mail:  gadepall@iith.ac.in. All content in this manual is released under GNU GPL.  Free and open source.}	
-}
+\author{ Yash Patil - EE22BTECH11058}
 %\title{
 %	\logo{Matrix Analysis through Octave}{\begin{center}\includegraphics[scale=.24]{tlc}\end{center}}{}{HAMDSP}
 %}
@@ -214,25 +210,25 @@
 %\IEEEpeerreviewmaketitle
 \textbf{Question:}\\
 Obtain p, q, r in terms of a, b, c, the sides of the triangle using a matrix
-equation. Obtain the numerical values.\\\\
+equation. Obtain the numerical values.\\
 \indent\textbf{Solution:}\\
-Given in the question:\\ 
-$\vec{A}$ = \myvec{ 1 \\ -1 },
-$\vec{B}$ = \myvec{ -4 \\ 6 }
-and $\vec{C}$ = \myvec{ -3 \\ -5 } \\\\
+Given in the question:
+\begin{align}
+    \vec{A} &= \myvec{ 1 \\ -1 }\\
+    \vec{B} &= \myvec{ -4 \\ 6 }\\
+    \vec{C} &= \myvec{ -3 \\ -5 } 
+\end{align}
 Now, the side lengths a, b and c can be calculated as:
 \begin{align}
-    a &= \sqrt{(\vec{C}-\vec{B})^{\top}.(\vec{C}-\vec{B})}\\
+    a &= \sqrt{(\vec{C}-\vec{B})^{\top}(\vec{C}-\vec{B})}\\
     &= \sqrt{\myvec{1&-11} \myvec{1\\-11}}\\
     &= \sqrt{1+121}\\
-    &=\sqrt{122}\\\\
-% 
-    b &= \sqrt{(\vec{A}-\vec{C})^{\top}.(\vec{A}-\vec{C})}\\
+    &=\sqrt{122}    \\  \nonumber   \\
+    b &= \sqrt{(\vec{A}-\vec{C})^{\top}(\vec{A}-\vec{C})}\\
     &= \sqrt{\myvec{4&4} \myvec{4\\4}}\\
     &= \sqrt{16+16}\\
-    &=\sqrt{32}\\\\
-% 
-    c &= \sqrt{(\vec{B}-\vec{A})^{\top}.(\vec{B}-\vec{A})}\\
+    &=\sqrt{32}     \\  \nonumber   \\
+    c &= \sqrt{(\vec{B}-\vec{A})^{\top}(\vec{B}-\vec{A})}\\
     &= \sqrt{\myvec{-5&7} \myvec{-5\\7}}\\
     &= \sqrt{25+49}\\
     &=\sqrt{74}
@@ -241,7 +237,7 @@ AB being a straight line with $F_3$ a point on it,\\ it can be said that
 \begin{align}
     AB &= AF_3 + BF_3\\
     BC &= BD_3 + CD_3\\
-    CA &= AE_3 + BE_3\\\\
+    CA &= AE_3 + BE_3\\\nonumber\\
 % 
     \therefore 
     c &= m+n,\\
@@ -250,31 +246,29 @@ AB being a straight line with $F_3$ a point on it,\\ it can be said that
 \end{align}
 these 3 equations can be written as:
 \begin{align}
-    \myvec{0&1&1\\1&0&1\\1&1&0}\myvec{m\\n\\p} &= \myvec{1&0&0\\0&1&0\\0&0&1}\myvec{a\\b\\c}\\
-    \implies\myvec{0&1&1\\1&0&1\\1&1&0}\myvec{m\\n\\p} &= \myvec{a\\b\\c}
+    \myvec{1&1&0\\0&1&1\\1&0&1\\}\myvec{m\\n\\p} &= \myvec{1&0&0\\0&1&0\\0&0&1}\myvec{c\\a\\b}\\
+    \implies\myvec{1&1&0\\0&1&1\\1&0&1\\}\myvec{m\\n\\p} &= \myvec{c\\a\\b}
 \end{align}
 solving by Guassian elimination method,
 \begin{align}
-    \xleftrightarrow[]{R_1 \leftarrow R_1+R_2+R_3}&\\
-    \implies&\myvec{2&2&2\\1&0&1\\1&1&0}\myvec{m\\n\\p} = \myvec{a+b+c\\b\\c}\\
-    \xleftrightarrow[]{R_1 \leftarrow \frac{R_1}{R_2}}&\\
-    \implies&\myvec{1&1&1\\1&0&1\\1&1&0}\myvec{m\\n\\p} = \myvec{\frac{a+b+c}{2}\\b\\c}\\
-    \xleftrightarrow[]{R_1 \leftarrow R_1-R_2}&\\
-    \implies&\myvec{1&1&1\\0&1&0\\1&1&0}\myvec{m\\n\\p} = \myvec{\frac{a+b+c}{2}\vspace{0.1cm}\\\frac{a-b+c}{2}\\c}\\
-    \xleftrightarrow[]{R_1 \leftarrow R_1-R_3}&\\
-    \implies&\myvec{1&1&1\\0&1&0\\0&0&1}\myvec{m\\n\\p} = \myvec{\frac{a+b+c}{2}\vspace{0.1cm}\\\frac{a-b+c}{2}\vspace{0.1cm}\\\frac{a+b-c}{2}}
-\end{align}
-\begin{align}
-    \xleftrightarrow[]{R_1 \leftarrow R_1-R_2-R_3}&\\
-    \implies&\myvec{1&0&0\\0&1&0\\0&0&1}\myvec{m\\n\\p} = \myvec{\frac{-a+b+c}{2}\vspace{0.1cm}\\\frac{a-b+c}{2}\vspace{0.1cm}\\\frac{a+b-c}{2}}\\
-    \implies&\myvec{m\\n\\p} = \myvec{\frac{-a+b+c}{2}\vspace{0.1cm}\\\frac{a-b+c}{2}\vspace{0.1cm}\\\frac{a+b-c}{2}}\\
-    \implies&\myvec{m\\n\\p} = \myvec{\frac{\sqrt{74}+\sqrt{32}-\sqrt{122}}{2}\vspace{0.1cm}\\\frac{\sqrt{74}+\sqrt{122}-\sqrt{32}}{2}\vspace{0.1cm}\\\frac{\sqrt{122}+\sqrt{32}-\sqrt{74}}{2}}
+    \myvec{1&1&0&c\\0&1&1&a\\1&0&1&b}\\
+    \xleftrightarrow[]{R_1 \leftarrow R_1+R_3-R_2}&
+    \myvec{2&0&0&c+b-a\\0&1&1&a\\1&0&1&b}\\
+    \xleftrightarrow[]{R_1 \leftarrow \frac{R_1}{2}}&
+    \myvec{1&0&0&\frac{c+b-a}{2}\\0&1&1&a\\1&0&1&b}\\
+    \xleftrightarrow[]{R_3 \leftarrow R_3-R_1}&
+    \myvec{1&0&0&\frac{c+b-a}{2}\\0&1&1&a\\0&0&1&\frac{a+b-c}{2}}\\
+    \xleftrightarrow[]{R_2 \leftarrow R_2-R_3}&
+    \myvec{1&0&0&\frac{c+b-a}{2}\\0&1&0&\frac{a+c-b}{2}\\0&0&1&\frac{a+b-c}{2}}
 \end{align}
 \begin{align}
     \therefore
-    m&= \frac{\sqrt{74}+\sqrt{32}-\sqrt{122}}{2},\\
-    n&= \frac{\sqrt{74}+\sqrt{122}-\sqrt{32}}{2},\\
-    p&= \frac{\sqrt{122}+\sqrt{32}-\sqrt{74}}{2}
+    m&=\frac{c+b-a}{2}\\ 
+    &=\frac{\sqrt{74}+\sqrt{32}-\sqrt{122}}{2}\\
+    n&=\frac{a+c-b}{2}\\ 
+    &=\frac{\sqrt{74}+\sqrt{122}-\sqrt{32}}{2}\\
+    p&=\frac{a+b-c}{2}\\
+    &=\frac{\sqrt{122}+\sqrt{32}-\sqrt{74}}{2}
 \end{align}
 
 \end{document}
