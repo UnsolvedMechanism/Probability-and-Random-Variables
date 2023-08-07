@@ -1,4 +1,3 @@
-from math import sqrt
 import numpy as np
 
 #defining vertices of triangle in matrix format
@@ -7,16 +6,17 @@ B = np.array([-4,6])
 C = np.array([-3,-5])
 
 #finding sidelengths a, b & c
-a = sqrt((B-C)@(B-C))
-b = sqrt((A-C)@(A-C))
-c = sqrt((B-A)@(B-A))
+a = np.linalg.norm(B-C)
+b = np.linalg.norm(C-A)
+c = np.linalg.norm(A-B)
 
-s = (a+b+c)/2
+#creating array containing coefficients
+Y = np.array([[1,1,0],[0,1,1],[1,0,1]])
 
-m = s-a
-n = s-b
-p = s-c
+#solving the equations
+X = np.linalg.solve(Y,[c,a,b])
 
-print("m = ",m)
-print("n = ",n)
-print("p = ",p)
+#printing output upto 3 decimals
+print("m = %.3f" % (X[0]))
+print("n = %.3f" % (X[1]))
+print("p = %.3f" % (X[2]))
