@@ -16,7 +16,5 @@ Y = np.array([[1,1,0],[0,1,1],[1,0,1]])
 #solving the equations
 X = np.linalg.solve(Y,[c,a,b])
 
-#printing output upto 3 decimals
-print("m = %.3f" % (X[0]))
-print("n = %.3f" % (X[1]))
-print("p = %.3f" % (X[2]))
+#printing output 
+print(X)
