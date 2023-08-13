@@ -187,13 +187,13 @@ Given in the question:
     \vec{C} &= \myvec{ -3 \\ -5 } 
 \end{align}
 \begin{align}
-	\rank\myvec{1&1&1\\\vec{A}&\vec{B}&\vec{C}} &= \rank\myvec{1&1&1\\1&-4&-3\\1&6&-5}
+	\rank\myvec{1&1&1\\\vec{A}&\vec{B}&\vec{C}} &= \rank\myvec{1&1&1\\-1&-4&-3\\1&6&-5}
 \end{align}
 Solving by row-echelon method,
 \begin{align}
 	\myvec{1&1&1\\1&-4&-3\\1&6&-5} \xleftrightarrow[]{R_2 \leftarrow R_2-R_1}& \myvec{1&1&1\\0&-5&-4\\1&6&-5}\\
-	\xleftrightarrow[]{R_3 \leftarrow R_3-R_1}& \myvec{1&1&1\\0&-5&-4\\0&5&-6}\\
-	\xleftrightarrow[]{R_3 \leftarrow R_3+R_2}& \myvec{1&1&1\\0&-5&-4\\0&0&-10}
+	\xleftrightarrow[]{R_3 \leftarrow R_3-R_1}& \myvec{1&1&1\\0&-5&-4\\0&7&-4}\\
+	\xleftrightarrow[]{R_3 \leftarrow R_3+\frac{7}{5}R_2}& \myvec{1&1&1\\0&-5&-4\\0&0&\frac{-48}{5}}
 \end{align}
 $\therefore$ rank of matrix = number of non-zero rows = 3, Hence the points are not collinear
 \end{document}
