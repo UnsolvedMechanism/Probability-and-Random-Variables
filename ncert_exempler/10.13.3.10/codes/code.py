@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-#Number of samples is 24, 1 denotes green marble and 0 denotes blue marble
+#Number of samples is 10
 simlen=int(10)
 
 #choosing random number from 1 to 10
@@ -11,7 +11,7 @@ num = np.random.randint(1,11, size=simlen)
 suits = ['Diamonds', 'Hearts', 'Spades', 'Clubs']
 shape = np.random.choice(suits,size=simlen)
 
-#showing the new lines generated
+#showing the new cases generated
 ls = eq = gr = 0
 print("Random cases generated:")
 for i in range(0,10):
