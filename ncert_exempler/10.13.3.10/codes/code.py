@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 simlen=int(10)
 
 #choosing random number from 1 to 10
-num = np.random.randint(0,11, size=simlen)
+num = np.random.randint(1,11, size=simlen)
 
 #choosing random suit
 suits = ['Diamonds', 'Hearts', 'Spades', 'Clubs']

@@ -4,7 +4,8 @@ import sys                                          #for path to external script
 import matplotlib.pyplot as plt
 import matplotlib.image as mping
 
-sys.path.insert(0, '/home/yash/Desktop/Python Project Trial')        #path to my scripts
+sys.path.insert(0, 'geometry/pythonProject')        #path to my scripts
+
 import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
 import math
@@ -82,7 +83,7 @@ def _1_3(A, B, C):
     plt.legend(loc='best')
     plt.grid()
     plt.axis('equal')
-    plt.savefig('/home/yash/Desktop/Python Project Trial/figs/_1_3.png')
+    plt.savefig('/home/yash/Desktop/Probability Git Clone/Probability-and-Random-Variables/geometry/pythonProject/figs/_1_3.png')
     # plt.show()
 
 def _1_4(A,B,C):
@@ -160,22 +161,26 @@ def _1_5(A,B,C):
     plt.legend(loc='best')
     plt.grid()
     plt.axis('equal')
-    plt.savefig('/home/yash/Desktop/Python Project Trial/figs/_1_5.png')
+    plt.savefig('/home/yash/Desktop/Probability Git Clone/Probability-and-Random-Variables/geometry/pythonProject/figs/_1_5.png')
 
 def _1_6(A,B,C):
-    def AreaCalc(A, B, C):
-        AB = A - B
-        AC = A - C
-    #cross_product calculation
-        cross_product = np.cross(AB,AC)
-    #magnitude calculation
-        magnitude = np.linalg.norm(cross_product)
-        area = 0.5 * magnitude
-        return area
-# Given vertices
-    A = np.array([1,-1])
-    B = np.array([-4,6])
-    C = np.array([-3,-5])
-    area_ABC = AreaCalc(A, B, C)
-    print("Q1.1.6:")
-    print("\nArea of triangle ABC:", area_ABC)
+    AB = A - B
+    AC = A - C
+    cross_product = np.cross(AB,AC)
+    magnitude = np.linalg.norm(cross_product)
+    area = 0.5 * magnitude
+    print("\nQ1.1.6:")
+    print("Area of triangle ABC:", area)
+
+def _1_7(A,B,C):
+    dotA=((B-A).T)@(C-A)
+    NormA=(np.linalg.norm(B-A))*(np.linalg.norm(C-A))
+
+    dotB=(A-B).T@(C-B)
+    NormB=(np.linalg.norm(A-B))*(np.linalg.norm(C-B))
+
+    dotC=(A-C).T@(B-C)
+    NormC=(np.linalg.norm(A-C))*(np.linalg.norm(B-C))
+    print('value of angle A: ', np.degrees(np.arccos((dotA)/NormA)))
+    print('value of angle B: ', np.degrees(np.arccos((dotB)/NormB)))
+    print('value of angle C: ', np.degrees(np.arccos((dotC)/NormC)))
