@@ -1,7 +1,6 @@
 import numpy as np
-import matplotlib.pyplot as plt
 
-#Number of samples is 10
+#Number of samples
 simlen=int(10)
 
 #choosing random number from 1 to 10
@@ -11,7 +10,7 @@ num = np.random.randint(1,11, size=simlen)
 suits = ['Diamonds', 'Hearts', 'Spades', 'Clubs']
 shape = np.random.choice(suits,size=simlen)
 
-#showing the new cases generated
+#showing the random sample generate
 ls = eq = gr = 0
 print("Random cases generated:")
 for i in range(0,10):

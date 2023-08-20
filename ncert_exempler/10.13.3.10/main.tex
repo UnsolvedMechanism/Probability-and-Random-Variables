@@ -117,31 +117,41 @@ Question: All the jacks, queens and kings are removed from a deck of 52 playing 
 \solution
 Number of cards left after removing all jacks, queens and kings(=N) 
 \begin{align}
-	&= 52 - 4*3\\
+	&= 52 - 4\times3\\
 	&= 40
 \end{align}
+For any given random variable X ranging from 1 to 10, the number of cards favouring the event(n) = 4\\
+$\therefore$ probabilty for the random vector, $P_{X}$ in range 1 to 10  = $\frac{n}{N} = 0.1$
+
+\centering
+\begin{tabular}{| c | c |}
+	\hline
+	X & $P_X$\\
+	\hline
+	X $<$ 7 & $\sum_{X = 1}^{6} P_X$\\ 
+	\hline
+	X = 7 & $P_7$\\ 
+	\hline
+	X $>$ 7 & $\sum_{X=8}^{10} P_X$\\ 
+	\hline
+\end{tabular}
+
 \begin{enumerate}
-	\item Number of cards with value equal to 7($n_1$) = 4\\
-		$\therefore$ Probability to find a card with value equal to 7 ($P_1$) 
+	\item Probability to find a card with value equal to 7 
 		\begin{align}
-			&= \frac{n_1}{N}\\
-			&= \frac{4}{40}\\
-			&=0.1
+			&= P_X, X = 7\\
+			&= 0.1
 		\end{align}
-	\item Number of cards with value greater than 7($n_2$) 
-		\begin{align} = 4*3 = 12 \end{align}
-		$\therefore$ Probability to find a card with value greater than 7 ($P_2$) 
+	\item Probability to find a card with value greater than 7  
 		\begin{align}
-			&= \frac{n_2}{N}\\
-			&= \frac{12}{40}\\
+			&= \sum_{X=8}^{10}P_X \\
+			&= 3\times0.1\\
 			&=0.3
 		\end{align}
-	\item Number of cards with value less than 7($n_3$)
-		\begin{align} = 4*6 = 24 \end{align}
-		$\therefore$ Probability to find a card with value lesser than 7 ($P_3$) 
+	\item Probability to find a card with value lesser than 7 
 		\begin{align}
-			&= \frac{n_3}{N}\\
-			&= \frac{24}{40}\\
+			&= \sum_{X = 1}^{6}P_X \\
+			&= 6\times0.1\\
 			&=0.6
 		\end{align}
 \end{enumerate}
