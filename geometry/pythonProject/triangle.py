@@ -1,10 +1,9 @@
 import numpy as np 
 import math
 import sys
-from codes import _1
+from codes import _1, _2
 
 sys.path.insert(0, '/home/yash/Desktop/Python Project/CoordGeo')        #path to my scripts
-import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
 import math
 from line.funcs import *
@@ -27,16 +26,18 @@ print()
 
 #_1.helloWorld()
 
-_1._1_1(A,B,C)
+_1._1(A,B,C)
 
-_1._1_2(A,B,C)
+_1._2(A,B,C)
 
-_1._1_3(A,B,C)
+_1._3(A,B,C)
 
-_1._1_4(A,B,C)
+_1._4(A,B,C)
 
-_1._1_5(A,B,C)
+_1._5(A,B,C)
 
-_1._1_6(A,B,C)
+_1._6(A,B,C)
 
-_1._1_7(A,B,C)
+_1._7(A,B,C)
+
+_2._1(A,B,C)

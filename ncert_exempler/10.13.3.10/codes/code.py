@@ -1,29 +1,26 @@
+import math
 import numpy as np
+from scipy.stats import bernoulli
 
-#Number of samples
-simlen=int(10)
+simlen = 100000
 
-#choosing random number from 1 to 10
-num = np.random.randint(1,11, size=simlen)
+print("Value equal to 7:")
+p1 = 0.1
+data_bern1 = bernoulli.rvs(size=simlen,p=p1)
+err_ind1 = np.nonzero(data_bern1 == 1)
+print("Probability-simulation,actual:",np.size(err_ind1)/100000,p1)
+print("Simulated values: ", data_bern1)
 
-#choosing random suit
-suits = ['Diamonds', 'Hearts', 'Spades', 'Clubs']
-shape = np.random.choice(suits,size=simlen)
+print("Value greater than 7:")
+p2 = 0.3
+data_bern2 = bernoulli.rvs(size=simlen ,p=p2)
+err_ind2 = np.nonzero(data_bern2 == 1)
+print("Probability-simulation,actual:",np.size(err_ind2)/100000,p2)
+print("Simulated values: ", data_bern2)
 
-#showing the random sample generate
-ls = eq = gr = 0
-print("Random cases generated:")
-for i in range(0,10):
-    print(num[i]," - ",shape[i])
-    if(num[i]<7):
-        ls += 1
-    elif(num[i]==7):
-        eq += 1
-    else:
-        gr += 1
-
-#printing probabilities
-print("\nProbability of:")
-print("Less than 7 - simulation, actual : ",ls/simlen,", 0.6")
-print("Equal to 7 - simulation, actual : ",eq/simlen,", 0.1")
-print("Greater than 7 - simulation, actual : ",gr/simlen,", 0.3")
+print("Value less  than 7:")
+p3 = 0.6
+data_bern3 = bernoulli.rvs(size=simlen ,p=p3)
+err_ind3 = np.nonzero(data_bern3 == 1)
+print("Probability-simulation,actual:",np.size(err_ind3)/100000,p3)
+print("Simulated values: ", data_bern3)
