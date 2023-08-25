@@ -1,0 +1,205 @@
+%\let\negmedspace\undefined
+%\let\negthickspace\undefined
+\documentclass[journal,12pt,onecolumn]{IEEEtran}
+%       \def\inputGnumericTable{}                                 %%
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{txfonts}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{gensymb}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{tkz-euclide} % loads  TikZ and tkz-base
+\usepackage{listings}
+\usepackage{chngcntr}
+\usepackage{gvv}
+\usepackage[section]{placeins}
+%
+%\usepackage{setspace}
+%\usepackage{gensymb}
+%\doublespacing
+%\singlespacing
+
+%\usepackage{graphicx}
+%\usepackage{amssymb}
+%\usepackage{relsize}
+%\usepackage[cmex10]{amsmath}
+%\usepackage{amsthm}
+%\interdisplaylinepenalty=2500
+%\savesymbol{iint}
+%\usepackage{txfonts}
+%\restoresymbol{TXF}{iint}
+%\usepackage{wasysym}
+%\usepackage{amsthm}
+%\usepackage{iithtlc}
+%\usepackage{mathrsfs}
+%\usepackage{txfonts}
+%\usepackage{stfloats}
+%\usepackage{bm}
+%\usepackage{cite}
+%\usepackage{cases}
+%\usepackage{subfig}
+%\usepackage{xtab}
+%\usepackage{longtable}
+%\usepackage{multirow}
+%\usepackage{algorithm}
+%\usepackage{algpseudocode}
+%\usepackage{enumitem}
+%\usepackage{mathtools}
+%\usepackage{tikz}
+%\usepackage{circuitikz}
+%\usepackage{verbatim}
+%\usepackage{tfrupee}
+%\usepackage{stmaryrd}
+%\usetkzobj{all}
+    \usepackage{color}                                            %%
+    \usepackage{array}                                            %%
+    \usepackage{longtable}                                        %%
+    \usepackage{calc}                                             %%
+    \usepackage{multirow}                                         %%
+    \usepackage{hhline}                                           %%
+    \usepackage{ifthen}                                           %%
+ %optionally (for landscape tables embedded in another document): %%
+    \usepackage{lscape}     
+%\usepackage{multicol}
+%\usepackage{chngcntr}
+%\usepackage{enumerate}
+
+%\usepackage{wasysym}
+%\documentclass[conference]{IEEEtran}
+%\IEEEoverridecommandlockouts
+% The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}{Example}[section]
+\newtheorem{definition}[problem]{Definition}
+%\newtheorem{thm}{Theorem}[section] 
+%\newtheorem{defn}[thm]{Definition}
+%\newtheorem{algorithm}{Algorithm}[section]
+%\newtheorem{cor}{Corollary}
+\newcommand{\BEQA}{\begin{eqnarray}}
+\newcommand{\EEQA}{\end{eqnarray}}
+\newcommand{\define}{\stackrel{\triangle}{=}}
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}
+
+%\bibliographystyle{ieeetr}
+\begin{document}
+%
+
+\bibliographystyle{IEEEtran}
+
+
+\vspace{3cm}
+
+\title{
+%	\logo{
+Random Vector Assignment
+%	}
+}
+\author{ Yash Patil
+}	
+\maketitle
+
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+
+Consider a triangle with vertices,\\
+\begin{align}
+	\vec{A} &= \myvec{4\\-5} ,\\ \vec{B} &= \myvec{-6\\2} ,\\ \vec{C} &= \myvec{-1\\-9}
+\end{align}
+\section{Vector}
+\counterwithin{figure}{section}
+\counterwithin{table}{section}
+\subsection{Table}
+\begin{table}[!htb]
+	\input{tables/table1.tex}
+	\caption{Equations related to triangle}
+	\label{tab58:equations_vector}	
+\end{table}
+\subsection{Figure}
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=\columnwidth]{figs/1.png}
+	\caption{Triangle generated using python}
+	\label{fig58:Triangle}	
+\end{figure}
+
+\section{Median}
+\subsection{Table}
+\begin{table}[!htb]
+	\input{tables/table2.tex}
+	\caption{Equations related to median}
+	\label{tab58:equations_median}	
+\end{table}
+\FloatBarrier
+\subsection{Figure}
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=\columnwidth]{figs/2.png}
+	\caption{Triangle with centroid generated using python}
+	\label{fig58:Triangle_with_centroid}	
+\end{figure}
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=\columnwidth]{figs/2_7.png}
+	\caption{Triangle with altitude generated using python}
+	\label{fig58:Triangle_with_altitude}	
+\end{figure}
+\FloatBarrier
+
+\section{Altitude}
+\subsection{Table}
+\begin{table}[!htb]
+	\input{tables/table3.tex}
+	\caption{Equations related to altitude}
+	\label{tab58:equations_altitude}	
+\end{table}
+\subsection{Figure}
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=\columnwidth]{figs/3.png}
+	\caption{Triangle with altitude generated using python}
+	\label{fig58:Triangle_with_altitude}	
+\end{figure}
+
+\section{Perpendicular Bisector}
+\subsection{Table}
+\begin{table}[!htb]
+	\input{tables/table4.tex}
+	\caption{Equations related to circumcircle}
+	\label{tab58:equations_circumcenter}	
+\end{table}
+\subsection{Figure}
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=\columnwidth]{figs/4.png}
+	\caption{Triangle with circumcircle generated using python}
+	\label{fig58:Triangle_with_circumcircle}	
+\end{figure}
+
+\section{Angular Bisector}
+\subsection{Table}
+\begin{table}[!htb]
+	\input{tables/table5.tex}
+	\caption{Equations related to incircle}
+	\label{tab58:equations_incircle}	
+\end{table}
+\subsection{Figure}
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=\columnwidth]{figs/5.png}
+	\caption{Triangle with incircle generated using python}
+	\label{fig58:Triangle_with_incircle}	
+\end{figure}
+
+\end{document}

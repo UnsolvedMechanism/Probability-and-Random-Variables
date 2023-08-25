@@ -187,27 +187,33 @@ Number of cards left after removing all jacks, queens and kings(=N)
 \end{align}
 \begin{table}[H]
 \def\arraystretch{1.2}
-\begin{tabular}{|c|c|c|c|c|}
+\begin{tabular}{|c|c|c|}
 \hline
-Random variable &Sample space &Value &Event &Probability \\ \hline
-$X_1$ &40 &4 &the card has value 7 and is of any suit & $\frac{4}{40}$ \\ \hline
-$X_2$ &40 &12 &the card has value greater than 7 and is of any suit& $\frac{12}{40}$ \\ \hline
-$X_3$ &40 &24 &the card has value less than 7 and is of any sui& $\frac{24}{40}$ \\ \hline
+	\textbf{Parameter} &\textbf{Value} &\textbf{Description}\\ \hline
+	$X_1$ &4 &the card has value 7 and is of any suit \\ \hline
+	$X_2$ &12 &the card has value greater than 7 and is of any suit \\ \hline
+	$X_3$ &24 &the card has value less than 7 and is of any suit \\ \hline
 \end{tabular}
 \end{table}
 \begin{enumerate}
 	\item Probability that card has value equal to 7
 		\begin{align}
+			&=	p_{X_1}(k); k = 7\\
+			&= Pr(X_1=7)\\
 			&= \frac{4}{40}\\
 			&= \frac{1}{10}
 		\end{align}
 	\item Probability that card has value greater than 7
 		\begin{align}
+			&= \sum_{k=8}^{10}p_{X_2}(k)\\
+			&= \sum_{k=8}^{10}Pr(X_2 = k)\\
 			&= \frac{12}{40}\\
 			&= \frac{3}{10}
 		\end{align}
 	\item Probability that card has value less than 7
 		\begin{align}
+			&=	\sum_{k=1}^{6}p_{X_3}(k)\\
+			&= \sum_{k=1}^{6}Pr(X_3 = k)\\
 			&= \frac{24}{40}\\
 			&= \frac{6}{10} 
 		\end{align}
