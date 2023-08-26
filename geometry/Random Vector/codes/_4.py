@@ -74,11 +74,13 @@ def solve(A,B,C):
 def fig(A,B,C):
     F = (A+B)/2
     E = (A+C)/2
+    D = (B+C)/2
     O = line_intersect(B-A,F,C-A,E)
     #Generating all lines
     x_AB = line_gen(A,B)
     x_BC = line_gen(B,C)
     x_CA = line_gen(C,A)
+    x_OD = line_gen(O,D)
     x_OE = line_gen(O,E)
     x_OF = line_gen(O,F)
     x_OA = line_gen(O,A)
@@ -86,6 +88,7 @@ def fig(A,B,C):
     plt.plot(x_AB[0,:],x_AB[1,:],label='$AB$')
     plt.plot(x_BC[0,:],x_BC[1,:],label='$BC$')
     plt.plot(x_CA[0,:],x_CA[1,:],label='$CA$')
+    plt.plot(x_OD[0,:],x_OD[1,:],label='$OD$')
     plt.plot(x_OE[0,:],x_OE[1,:],label='$OE$')
     plt.plot(x_OF[0,:],x_OF[1,:],label='$OF$')
     plt.plot(x_OA[0,:],x_OA[1,:],label='$OA$')
@@ -98,11 +101,12 @@ def fig(A,B,C):
     _B = B.reshape(-1,1)
     _C = C.reshape(-1,1)
     _F = F.reshape(-1,1)
+    _D = D.reshape(-1,1)
     _E = E.reshape(-1,1)
     _O = O.reshape(-1,1)
-    tri_coords = np.block([[_A, _B, _C, _E, _F, _O]])
+    tri_coords = np.block([[_A, _B, _C, _D, _E, _F, _O]])
     plt.scatter(tri_coords[0, :], tri_coords[1, :])
-    vert_labels = ['A', 'B', 'C', 'E', 'F', 'O']
+    vert_labels = ['A', 'B', 'C','D', 'E', 'F', 'O']
     for i, txt in enumerate(vert_labels):
         offset = 10 if txt == 'C' else -10
         plt.annotate(txt,
