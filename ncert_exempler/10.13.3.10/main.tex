@@ -170,7 +170,7 @@
 Q-10.13.3.10
 %	}
 }
-\author{Yash Patil - EE22BTECH1108}
+\author{Yash Patil - EE22BTECH11058}
 
 \maketitle
 Question: All the jacks, queens and kings are removed from a deck of 52 playing cards. The remaining cards are well shuffled and then one card is drawn at random. Giving ace a value 1 similar value for other cards, find the probability that the card has a value 
@@ -190,32 +190,44 @@ Number of cards left after removing all jacks, queens and kings(=N)
 \begin{tabular}{|c|c|c|}
 \hline
 	\textbf{Parameter} &\textbf{Value} &\textbf{Description}\\ \hline
-	$X_1$ &4 &the card has value 7 and is of any suit \\ \hline
-	$X_2$ &12 &the card has value greater than 7 and is of any suit \\ \hline
-	$X_3$ &24 &the card has value less than 7 and is of any suit \\ \hline
+	$X$ &1-10 &Represents the value of the card picked \\ \hline
+	$Y$ &Spades(1), Diamond(2), Clubs(3), Hearts(4) &Represents suit of the card picked up \\ \hline
 \end{tabular}
 \end{table}
+Proving X and Y represent independant events by showing:
+\begin{align}
+	\Pr(X.Y) &= \Pr(X)\times\Pr(Y)\\
+\end{align}
+Say, finding probabilities for card of value 'p' and suit 'q'\\
+\begin{align}
+	\Pr(X.Y) &= \frac{\text{Number of cards with value 'p' and suit 'q'}}{N}\\
+			&= \frac{1}{40}\\
+	\Pr(X = p) &= \frac{1}{10}\\
+	\Pr(Y = q) &= \frac{1}{4}\\
+	\therefore \Pr(X.Y) &= \Pr(X)\times\Pr(Y) = \frac{1}{40}
+\end{align}
+Hence, both events are independant.
 \begin{enumerate}
-	\item Probability that card has value equal to 7
+	\item Probability that card has value equal to 7\\
+		= (Probability of getting value equal to 7)$\times$(Probability of picking any suit)  
 		\begin{align}
-			&=	p_{X_1}(k); k = 7\\
-			&= Pr(X_1=7)\\
-			&= \frac{4}{40}\\
+			&= \Pr(X = 7)\times\sum_{i=1}^4\Pr(Y = i)\\
+			&= \frac{1}{10}\times\frac{1}{1}\\
 			&= \frac{1}{10}
 		\end{align}
-	\item Probability that card has value greater than 7
+	\item Probability that card has value greater than 7\\
+		= (Probability of getting value greater than 7)$\times$(Probability of picking any suit)  
 		\begin{align}
-			&= \sum_{k=8}^{10}p_{X_2}(k)\\
-			&= \sum_{k=8}^{10}Pr(X_2 = k)\\
-			&= \frac{12}{40}\\
+			&= \sum_{j=8}^{10}\Pr(X = j)\times\sum_{i=1}^4\Pr(Y = i)\\
+			&= \frac{3}{10}\times\frac{1}{1}\\
 			&= \frac{3}{10}
 		\end{align}
-	\item Probability that card has value less than 7
+	\item Probability that card has value less than 7\\
+		= (Probability of getting value less than 7)$\times$(Probability of picking any suit)  
 		\begin{align}
-			&=	\sum_{k=1}^{6}p_{X_3}(k)\\
-			&= \sum_{k=1}^{6}Pr(X_3 = k)\\
-			&= \frac{24}{40}\\
-			&= \frac{6}{10} 
+			&= \sum_{j=1}^6\Pr(X = j)\times\sum_{i=1}^4\Pr(Y = i)\\
+			&= \frac{6}{10}\times\frac{1}{1}\\
+			&= \frac{6}{10}
 		\end{align}
 \end{enumerate}
 
