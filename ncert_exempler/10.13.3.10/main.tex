@@ -191,42 +191,57 @@ Number of cards left after removing all jacks, queens and kings(=N)
 \hline
 	\textbf{Parameter} &\textbf{Value} &\textbf{Description}\\ \hline
 	$X$ &1-10 &Represents the value of the card picked \\ \hline
-	$Y$ &Spades(1), Diamond(2), Clubs(3), Hearts(4) &Represents suit of the card picked up \\ \hline
+	$Y$ &1-4 &Represents suit of the card: 1-Spades, 2-Diamond, 3-Clubs, 4-Hearts\\ \hline
 \end{tabular}
 \end{table}
-Proving X and Y represent independant events by showing:
+Proving X and Y represent independant events by calculating marginal and joint probabilities\\
+Finding pmf of marginal probability:
 \begin{align}
-	\Pr(X.Y) &= \Pr(X)\times\Pr(Y)\\
+	p_X(j) &= \Pr(X=j)\\
+	&= \frac{4\times 1}{40}\\
+	&= \frac{1}{10}\\
+	p_Y(k) &= \Pr(Y=k)\\
+	&= \frac{10}{40}\\
+	&= \frac{1}{4}
 \end{align}
-Say, finding probabilities for card of value 'p' and suit 'q'\\
+Finding pmf of joint probability:
 \begin{align}
-	\Pr(X.Y) &= \frac{\text{Number of cards with value 'p' and suit 'q'}}{N}\\
-			&= \frac{1}{40}\\
-	\Pr(X = p) &= \frac{1}{10}\\
-	\Pr(Y = q) &= \frac{1}{4}\\
-	\therefore \Pr(X.Y) &= \Pr(X)\times\Pr(Y) = \frac{1}{40}
+	p_{X,Y}(j,k) &= \Pr(X=j, Y=k)\\
+	&= \frac{1}{40}
 \end{align}
-Hence, both events are independant.
+As
+\begin{align}
+	p_{X,Y}(j,k) &= \frac{1}{40}\\
+	&= p_X(j)\times p_Y(k)\\
+\end{align}
+we can say that both the events are independant of each other.\\\\
+$\therefore$ pmf of getting number 'j' and suit 'k'=
+\begin{align}
+	p_{X,Y}(j,k) = \frac{1}{40}
+\end{align}
+CDF for the following pmf is:
+\begin{align}
+	F_{X,Y}(j,k) &= \sum_{k=k_0}^{k=k_1}\sum_{j=j_0}^{j=j_1}p_{X,Y}(j,k)\\
+	&=\sum_{k=k_0}^{k=k_1}\sum_{j=j_0}^{j=j_1}\frac{1}{40}\\
+	&= (k_1-k_0+1)\times(j_1-j_0+1)\times \frac{1}{40}
+\end{align}
 \begin{enumerate}
-	\item Probability that card has value equal to 7\\
-		= (Probability of getting value equal to 7)$\times$(Probability of picking any suit)  
+	\item Probability that card has value equal to 7:\\
 		\begin{align}
-			&= \Pr(X = 7)\times\sum_{i=1}^4\Pr(Y = i)\\
-			&= \frac{1}{10}\times1\\
+			&= F_{X,Y}(j,k);\ j = 7\ and\ 1 \leq k \leq 4\\
+			&= 4\times 1 \times \frac{1}{40}\\
 			&= \frac{1}{10}
 		\end{align}
 	\item Probability that card has value greater than 7\\
-		= (Probability of getting value greater than 7)$\times$(Probability of picking any suit)  
 		\begin{align}
-			&= \sum_{j=8}^{10}\Pr(X = j)\times\sum_{i=1}^4\Pr(Y = i)\\
-			&= \frac{3}{10}\times1\\
+			&= F_{X,Y}(j,k);\ 8 \leq j \leq 10\ and\ 1 \leq k \leq 4\\
+			&= 4\times 3 \times \frac{1}{40}\\
 			&= \frac{3}{10}
 		\end{align}
 	\item Probability that card has value less than 7\\
-		= (Probability of getting value less than 7)$\times$(Probability of picking any suit)  
 		\begin{align}
-			&= \sum_{j=1}^6\Pr(X = j)\times\sum_{i=1}^4\Pr(Y = i)\\
-			&= \frac{6}{10}\times1\\
+			&= F_{X,Y}(j,k);\ 1 \leq j \leq 6\ and\ 1 \leq k \leq 4\\
+			&= 4\times 6 \times \frac{1}{40}\\
 			&= \frac{6}{10}
 		\end{align}
 \end{enumerate}
