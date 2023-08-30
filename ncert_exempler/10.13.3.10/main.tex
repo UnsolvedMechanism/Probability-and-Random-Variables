@@ -195,33 +195,44 @@ Number of cards left after removing all jacks, queens and kings(=N)
 \end{table}
 Finding pmf:
 \begin{align}
-	p_X(k) &= \Pr(X=k)\\
+	p_X(k) &= \Pr(X=k); 1 \leq k \leq 10\\
 	&= \frac{4\times 1}{40}\\
 	&= \frac{1}{10}\\
+	\therefore p_X(k) &= 
+	\begin{cases}
+		\frac{1}{10} & 1 \leq k \leq 10\\
+		0 & otherwise
+	\end{cases}
 \end{align}
 CDF for the following pmf is:
 \begin{align}
-	F_{X}(k) &= \sum_{k=k_0}^{k=k_1}p_{X}(k)\\
-	&= (k_1-k_0+1)\times \frac{1}{10}
+	F_{X}(k) &= \sum_{m=0}^{k}p_{X}(m); 1 \leq k \leq 10\\
+	&= k\times \frac{1}{10}\\
+	&= \frac{k}{10}\\
+	\therefore F_{X}(k) &= 
+	\begin{cases}
+		0 & k \leq 0\\
+		\frac{k}{10} & 1\leq k \leq 10\\
+		1 & k > 10 
+	\end{cases}
 \end{align}
 \begin{enumerate}
 	\item Probability that card has value equal to 7:\\
 		\begin{align}
-			&= F_{X}(k);\ k = 7\\
+			&= p_{X}(k);\ k = 7\\
 			&= 1 \times \frac{1}{10}
 			= \frac{1}{10}
 		\end{align}
 	\item Probability that card has value greater than 7\\
 		\begin{align}
-			&= F_{X}(k);\ 8 \leq k \leq 10\\
-			&= 3 \times \frac{1}{10}
+			&= F_{X}(10) - F_X(7)\\
+			&= 1 - \frac{7}{10}
 			= \frac{3}{10}
 		\end{align}
 	\item Probability that card has value less than 7\\
 		\begin{align}
-			&= F_{X}(k);\ 1 \leq k \leq 6\\
-			&= 6 \times \frac{1}{10}
-			= \frac{6}{10}
+			&= F_{X}(6);\\
+			&=\frac{6}{10}
 		\end{align}
 \end{enumerate}
 
