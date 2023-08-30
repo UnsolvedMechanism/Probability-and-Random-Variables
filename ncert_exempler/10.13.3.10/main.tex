@@ -191,58 +191,37 @@ Number of cards left after removing all jacks, queens and kings(=N)
 \hline
 	\textbf{Parameter} &\textbf{Value} &\textbf{Description}\\ \hline
 	$X$ &1-10 &Represents the value of the card picked \\ \hline
-	$Y$ &1-4 &Represents suit of the card: 1-Spades, 2-Diamond, 3-Clubs, 4-Hearts\\ \hline
 \end{tabular}
 \end{table}
-Proving X and Y represent independant events by calculating marginal and joint probabilities\\
-Finding pmf of marginal probability:
+Finding pmf:
 \begin{align}
-	p_X(j) &= \Pr(X=j)\\
+	p_X(k) &= \Pr(X=k)\\
 	&= \frac{4\times 1}{40}\\
 	&= \frac{1}{10}\\
-	p_Y(k) &= \Pr(Y=k)\\
-	&= \frac{10}{40}\\
-	&= \frac{1}{4}
-\end{align}
-Finding pmf of joint probability:
-\begin{align}
-	p_{X,Y}(j,k) &= \Pr(X=j, Y=k)\\
-	&= \frac{1}{40}
-\end{align}
-As
-\begin{align}
-	p_{X,Y}(j,k) &= \frac{1}{40}\\
-	&= p_X(j)\times p_Y(k)\\
-\end{align}
-we can say that both the events are independant of each other.\\\\
-$\therefore$ pmf of getting number 'j' and suit 'k'=
-\begin{align}
-	p_{X,Y}(j,k) = \frac{1}{40}
 \end{align}
 CDF for the following pmf is:
 \begin{align}
-	F_{X,Y}(j,k) &= \sum_{k=k_0}^{k=k_1}\sum_{j=j_0}^{j=j_1}p_{X,Y}(j,k)\\
-	&=\sum_{k=k_0}^{k=k_1}\sum_{j=j_0}^{j=j_1}\frac{1}{40}\\
-	&= (k_1-k_0+1)\times(j_1-j_0+1)\times \frac{1}{40}
+	F_{X}(k) &= \sum_{k=k_0}^{k=k_1}p_{X}(k)\\
+	&= (k_1-k_0+1)\times \frac{1}{10}
 \end{align}
 \begin{enumerate}
 	\item Probability that card has value equal to 7:\\
 		\begin{align}
-			&= F_{X,Y}(j,k);\ j = 7\ and\ 1 \leq k \leq 4\\
-			&= 4\times 1 \times \frac{1}{40}\\
-			&= \frac{1}{10}
+			&= F_{X}(k);\ k = 7\\
+			&= 1 \times \frac{1}{10}
+			= \frac{1}{10}
 		\end{align}
 	\item Probability that card has value greater than 7\\
 		\begin{align}
-			&= F_{X,Y}(j,k);\ 8 \leq j \leq 10\ and\ 1 \leq k \leq 4\\
-			&= 4\times 3 \times \frac{1}{40}\\
-			&= \frac{3}{10}
+			&= F_{X}(k);\ 8 \leq k \leq 10\\
+			&= 3 \times \frac{1}{10}
+			= \frac{3}{10}
 		\end{align}
 	\item Probability that card has value less than 7\\
 		\begin{align}
-			&= F_{X,Y}(j,k);\ 1 \leq j \leq 6\ and\ 1 \leq k \leq 4\\
-			&= 4\times 6 \times \frac{1}{40}\\
-			&= \frac{6}{10}
+			&= F_{X}(k);\ 1 \leq k \leq 6\\
+			&= 6 \times \frac{1}{10}
+			= \frac{6}{10}
 		\end{align}
 \end{enumerate}
 
