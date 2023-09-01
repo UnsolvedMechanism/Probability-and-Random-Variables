@@ -2,9 +2,9 @@ import math
 import numpy as np
 from scipy.stats import bernoulli
 
-simlen = 100000
+simlen = 1000000
 
-pmf = np.array([0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1])
+pmf = np.full(10,0.1)
 
 def cdf(k):
     if(k>10):
