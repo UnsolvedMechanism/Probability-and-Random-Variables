@@ -182,14 +182,13 @@ together is
 	\item none of the above 
 \end{enumerate}
 \solution
-Let n(k) denote the number of ways in which k people can sit in a row.
+The number of ways in which $n$ people can sit in a row
 \begin{align}
-	n(k) = k!
+	=n!
 \end{align}
 $\therefore$ for 6 boys and 6 girls, total number of arrangements 
 \begin{align}
-	&= n(12)\\
-	&= 12!
+	= 12!
 \end{align}
 \begin{table}[H]
 \def\arraystretch{1.2}
@@ -202,12 +201,12 @@ $\therefore$ for 6 boys and 6 girls, total number of arrangements
 Finding pmf:
 \begin{align}
 	p_X(k) &= Pr(X=k)\\
-	&= \frac{n(12-k+1)\times n(k)}{n(12)}
+	&= \frac{(12-k+1)!\times k!}{12!}
 \end{align}
 $\therefore$ probability of 6 girls sitting together
 \begin{align}
 	= p_X(6) &= Pr(X=6)\\
-	&= \frac{n(7)\times n(6)}{n(12)}\\
+	&= \frac{(12-6+1)!\times 6!}{12!}\\
 	&= \frac{7!\times 6!}{12!}\\
 	&= \frac{1}{132}
 \end{align}
