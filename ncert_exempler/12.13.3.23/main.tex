@@ -182,27 +182,24 @@ there will be at least one defective watch?
 \begin{tabular}{|c|c|c|}
 \hline
 	\textbf{Parameter} &\textbf{Value} &\textbf{Description}\\ \hline
-	$X$ &0,1 &0-Defective watch, 1-Good watch\\ \hline
-	$Y$ &0-8 &Represents number of defective watches selected in 8 selections\\ \hline
+	$X_1-X_8$ &0,1 &0-Defective watch, 1-Good watch and $X_i$ denotes $i^{th}$ selection\\ \hline
+	$Y$ &$\sum_{i=1}^8X_i$ &Represents number of defective watches selected in 8 selections\\ \hline
 \end{tabular}
 \end{table}
-Finding pmf of X and Y:
+pmf of $X_1-X_8$:
 \begin{align}
-	p_X(k) &= Pr(X=k) \ \ \ k\in\{0,1\}\\
-	&= \begin{cases}
+	p_{X_i}(k)	&= \begin{cases}
 		\frac{1}{10}, & k=0\\
 		\frac{9}{10}, & k=1
-	\end{cases}
+	\end{cases} \ \ \ \forall \ \ \ 1 \leq i \leq 8 
 \end{align}
+pmf of Y is given by:
 \begin{align}
-	p_Y(k) &= Pr(Y=k) \ \forall\ 0 \leq k \leq 8\\
-	&= \binom{8}{k}\prod_{i=0}^kp_X(0)\prod_{j=0}^{8-k}p_X(1)\\
-	&= \binom{8}{k}\times(0.1)^k\times(0.9)^{8-k}
-\end{align}
+	p_Y(k) &= \binom{8}{k}\times(0.1)^k\times(0.9)^{8-k}\ \ \ \forall\ \ \  0 \leq k \leq 8\\
+	\end{align}
 CDF of Y:
 \begin{align}
-	F_Y(k) &= \sum_{i=0}^kp_Y(i)\\
-	&= \sum_{i=0}^k \binom{8}{i}\times(0.1)^i\times(0.9)^{8-i}
+	F_Y(k) &= \sum_{i=0}^k \binom{8}{i}\times(0.1)^i\times(0.9)^{8-i}\ \ \ \forall\ \ \  0 \leq k \leq 8\\
 \end{align}
 $\therefore$ probability of choosing atleast one defective watch in 8 selections
 \begin{align}

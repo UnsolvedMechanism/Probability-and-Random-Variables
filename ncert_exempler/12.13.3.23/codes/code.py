@@ -1,17 +1,27 @@
-import numpy as np
 import math
-from scipy.stats import bernoulli
+import random
+import numpy as np
 
-simlen = 10000.0
-draws = 8
+def bernoulli_probability(p, k, n):
+    binomial_coefficient = math.comb(n, k)
+    probability = binomial_coefficient *  (p**k) * ((1-p)**(n - k))
+    return probability
 
-p_def = 0.9
-ctr = 0.0
-for i in range(int(simlen)):
-    data_bern = bernoulli.rvs(size=draws,p=p_def)
-    err_ind = np.nonzero(data_bern == 1)
-    if(np.size(err_ind)<draws):
-        ctr += 1
+def simulate_bernoulli_trials(p, n, num_simulations, k):
+    trials_matrix = np.random.random((num_simulations, n)) < p
+    successes_per_simulation = np.sum(trials_matrix, axis=1)
+    success_count = np.count_nonzero(successes_per_simulation == k)
     
-prob = ctr/simlen
-print("Probability - simulation, actual :", prob," 0.569533")
+    proportion_successful = success_count / num_simulations
+    return proportion_successful
+
+p = 0.1
+n = 8
+k = 0
+num_simulations = 15000000
+
+probability = bernoulli_probability(p, k, n)
+print("Bernoulli probability: ", 1.0-probability)
+
+simulated_probability = simulate_bernoulli_trials(p, n, num_simulations, k)
+print("Simulated probability: ", 1-simulated_probability)
