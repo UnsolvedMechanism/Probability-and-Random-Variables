@@ -182,11 +182,11 @@ there will be at least one defective watch?
 \begin{tabular}{|c|c|c|}
 \hline
 	\textbf{Parameter} &\textbf{Value} &\textbf{Description}\\ \hline
-	$X_1-X_8$ &0,1 &0-Defective watch, 1-Good watch and $X_i$ denotes $i^{th}$ selection\\ \hline
+	$X_i$ &0,1 &0-Defective watch, 1-Good watch and $X_i$ denotes $i^{th}$ selection\\ \hline
 	$Y$ &$\sum_{i=1}^8X_i$ &Represents number of defective watches selected in 8 selections\\ \hline
 \end{tabular}
 \end{table}
-pmf of $X_1-X_8$:
+pmf of $X_i$:
 \begin{align}
 	p_{X_i}(k)	&= \begin{cases}
 		\frac{1}{10}, & k=0\\
@@ -203,6 +203,8 @@ CDF of Y:
 \end{align}
 $\therefore$ probability of choosing atleast one defective watch in 8 selections
 \begin{align}
+	&= \sum_{k=1}^8p_Y(k)\\
+	&= \sum_{k=0}^8p_Y(k) - p_Y(0)\\
 	&= F_Y(8)-F_Y(0)\\
 	&= 1-\binom{8}{0}\times(0.1)^0\times(0.9)^8\\
 	&= 1 - 0.430467\\
