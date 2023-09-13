@@ -195,7 +195,7 @@ pmf of $X_i$:
 \end{align}
 pmf of Y is given by:
 \begin{align}
-	p_Y(k) &= \binom{8}{k}\times(0.1)^k\times(0.9)^{8-k}\ \ \ \forall\ \ \  0 \leq k \leq 8\\
+	p_Y(k) = \pr{Y=k} &= \binom{8}{k}\times(0.1)^k\times(0.9)^{8-k}\ \ \ \forall\ \ \  0 \leq k \leq 8\\
 	\end{align}
 CDF of Y:
 \begin{align}
@@ -203,11 +203,8 @@ CDF of Y:
 \end{align}
 $\therefore$ probability of choosing atleast one defective watch in 8 selections
 \begin{align}
-	&= \sum_{k=1}^8p_Y(k)\\
-	&= \sum_{k=0}^8p_Y(k) - p_Y(0)\\
+	&= \sum_{k=1}^8\pr{Y=k}\\
 	&= F_Y(8)-F_Y(0)\\
-	&= 1-\binom{8}{0}\times(0.1)^0\times(0.9)^8\\
-	&= 1 - 0.430467\\
 	&= 0.569533
 \end{align}
 \end{document}
