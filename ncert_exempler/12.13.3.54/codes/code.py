@@ -1,6 +1,7 @@
 import math
 import random
 import numpy as np
+from statistics import variance
 
 def bernoulli_probability(p, k, n):
     binomial_coefficient = math.comb(n, k)
@@ -17,11 +18,24 @@ def simulate_bernoulli_trials(p, n, num_simulations, k):
 
 p = 0.5
 n = 2
-k = 2
+k1 = 0
+k2 = 1
+k3 = 2
 num_simulations = 15000000
+X = np.array(range(n+1))
 
-probability = bernoulli_probability(p, k, n)
-print("Bernoulli probability: ", 1.0-probability)
+p1 = bernoulli_probability(p, k1, n)
+p2 = bernoulli_probability(p, k2, n)
+p3 = bernoulli_probability(p, k3, n)
+P = np.array([p1,p2,p3])
 
-simulated_probability = simulate_bernoulli_trials(p, n, num_simulations, k)
-print("Simulated probability: ", 1-simulated_probability)
+sp1= simulate_bernoulli_trials(p, n, num_simulations, k1)
+sp2= simulate_bernoulli_trials(p, n, num_simulations, k2)
+sp3= simulate_bernoulli_trials(p, n, num_simulations, k3)
+sP = np.array([sp1,sp2,sp3])
+
+var = 3*variance(X*P)
+svar =  3*variance(X*sP)
+
+print("Actual variancs: ",var)
+print("Simulated variance: ", svar)
