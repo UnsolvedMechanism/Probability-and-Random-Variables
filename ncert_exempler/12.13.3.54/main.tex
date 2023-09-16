@@ -187,15 +187,15 @@ variance of the number of successes.\\
 	\hline
 \end{tabular}
 \end{table}
-pmf of $X$:
+pmf of $X_i$:
 \begin{align}
 	p_{X_i}(k)&= 
 	\begin{cases}
 		\frac{1}{2}, & k=0\\
 		\frac{1}{2}, & k=1
-	\end{cases} 
+	\end{cases} \ \ \ \forall \ \ \ 1 \leq i \leq 2 
 \end{align}
-pmf of $Y$:
+pmf of $Y$ id given by:
 \begin{align}	
 	p_Y(k)&= \binom{2}{k}(0.5)^{2-k}\times(0.5)^{k} \ \ \ \forall \ \ \ 0 \leq k \leq 2\\
 	\therefore p_Y(k)&=
@@ -205,7 +205,7 @@ pmf of $Y$:
 		\frac{1}{4}, & k=2
 	\end{cases} 
 \end{align}
-Variance of number of successes is given by
+Variance of number of successes is given by:
 \begin{align}
 	\sigma^2 &= E(Y^2)-[E(Y)]^2\\
 	&= \sum_{k=0}^2(k^2\times p_Y(k)) - \biggl[ \sum_{k=0}^2k\times p_Y(k)\biggr]^2\\
