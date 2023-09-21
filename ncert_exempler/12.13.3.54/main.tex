@@ -183,8 +183,6 @@ variance of the number of successes.\\
 	\textbf{Parameter} &\textbf{Value} &\textbf{Description}\\ \hline
 	$X_i$ &0,1 &0-Not a success, 1-Success and it represents outcome of $i^{th}$ throw\\ 
 	\hline
-	$Y$ &0-2 &Represents number of successes in 2 throws\\ 
-	\hline
 \end{tabular}
 \end{table}
 pmf of $X_i$:
@@ -195,21 +193,32 @@ pmf of $X_i$:
 		\frac{1}{2}, & k=1
 	\end{cases} \ \ \ \forall \ \ \ 1 \leq i \leq 2 
 \end{align}
-pmf of $Y$ id given by:
-\begin{align}	
-	p_Y(k)&= \binom{2}{k}(0.5)^{2-k}\times(0.5)^{k} \ \ \ \forall \ \ \ 0 \leq k \leq 2\\
-	\therefore p_Y(k)&=
-	\begin{cases}
-		\frac{1}{4}, & k=0\\
-		\frac{1}{2}, & k=1\\
-		\frac{1}{4}, & k=2
-	\end{cases} 
+Probability of 0 successes:
+\begin{align}
+	&= \Pr(X_1+X_2 = 0)\\
+	&= \frac{1}{2}\times\frac{1}{2}\\
+	&= \frac{1}{4}
+\end{align}
+Probability of 1 success:
+\begin{align}
+	&= \Pr(X_1+X_2 = 1) - \Pr(X_1X_2 = 1)\\
+	&= 3\times\frac{1}{2}\times\frac{1}{2}-\frac{1}{4}\\
+	&= \frac{1}{2}
+\end{align}
+Probability of 2 successes:
+\begin{align}
+	&= \Pr(X_1X_2 = 1)\\
+	&= \frac{1}{2}\times\frac{1}{2}\\
+	&= \frac{1}{4}
+\end{align}
+Mean of given distribution is
+\begin{align}
+	&= 0\times\frac{1}{4} + 1\times\frac{1}{2} + 2\times\frac{1}{4}\\
+	&= 1
 \end{align}
 Variance of number of successes is given by:
 \begin{align}
-	\sigma^2 &= E(Y^2)-[E(Y)]^2\\
-	&= \sum_{k=0}^2(k^2\times p_Y(k)) - \biggl[ \sum_{k=0}^2k\times p_Y(k)\biggr]^2\\
-	&= \frac{3}{2} - 1\\
+	\sigma^2 &= (0-1)^2\times\frac{1}{4} + (1-1)^2\times\frac{1}{2} + (2-1)^2\times\frac{1}{4}\\
 	&= \frac{1}{2}
 \end{align}
 \end{document}
