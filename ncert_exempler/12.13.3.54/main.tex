@@ -185,7 +185,7 @@ variance of the number of successes.\\
 	\hline
 \end{tabular}
 \end{table}
-pmf of $X_i$:
+pmf of $X_i$ is 
 \begin{align}
 	p_{X_i}(k)&= 
 	\begin{cases}
@@ -193,32 +193,21 @@ pmf of $X_i$:
 		\frac{1}{2}, & k=1
 	\end{cases} \ \ \ \forall \ \ \ 1 \leq i \leq 2 
 \end{align}
-Probability of 0 successes:
+Mean value of $X_i$ is
 \begin{align}
-	&= \Pr(X_1+X_2 = 0)\\
-	&= \frac{1}{2}\times\frac{1}{2}\\
-	&= \frac{1}{4}
-\end{align}
-Probability of 1 success:
-\begin{align}
-	&= \Pr(X_1+X_2 = 1) - \Pr(X_1X_2 = 1)\\
-	&= 3\times\frac{1}{2}\times\frac{1}{2}-\frac{1}{4}\\
+	\mu_X &= E[X_i]\ \ \ i = 0, 1 \\ 
 	&= \frac{1}{2}
 \end{align}
-Probability of 2 successes:
+Variance of $X_i$ is
 \begin{align}
-	&= \Pr(X_1X_2 = 1)\\
-	&= \frac{1}{2}\times\frac{1}{2}\\
+	\sigma_X &= E[(X_i-\mu_X)^2]\ \ \ i = 0, 1\\
 	&= \frac{1}{4}
 \end{align}
-Mean of given distribution is
+Variance of getting successes in two throws of a die is
 \begin{align}
-	&= 0\times\frac{1}{4} + 1\times\frac{1}{2} + 2\times\frac{1}{4}\\
-	&= 1
-\end{align}
-Variance of number of successes is given by:
-\begin{align}
-	\sigma^2 &= (0-1)^2\times\frac{1}{4} + (1-1)^2\times\frac{1}{2} + (2-1)^2\times\frac{1}{4}\\
+	&= E[((X_1-\mu_X) + (X_2-\mu_X))^2]\\
+	&= E[(X_1-\mu_X)^2] + E[(X_2-\mu_X)^2] + E[(X_1-\mu_X)\times(X_2-\mu_X)]\\
+	&= \frac{1}{4} + \frac{1}{4} + 0\\
 	&= \frac{1}{2}
 \end{align}
 \end{document}
