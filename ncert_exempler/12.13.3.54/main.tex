@@ -183,6 +183,8 @@ variance of the number of successes.\\
 	\textbf{Parameter} &\textbf{Value} &\textbf{Description}\\ \hline
 	$X_i$ &0,1 &0-Not a success, 1-Success and it represents outcome of $i^{th}$ throw\\ 
 	\hline
+	$X$ &0,1,2 & X = $X_1+X_2$, denoting number of outcomes in two throws\\ 
+	\hline
 \end{tabular}
 \end{table}
 pmf of $X_i$ is 
@@ -195,19 +197,17 @@ pmf of $X_i$ is
 \end{align}
 Mean value of $X_i$ is
 \begin{align}
-	\mu_X &= E[X_i]\ \ \ i = 0, 1 \\ 
+	\mu_{X_i} &= E[X_i], \ \ \ i = 0, 1 \\ 
 	&= \frac{1}{2}
 \end{align}
 Variance of $X_i$ is
 \begin{align}
-	\sigma_X &= E[(X_i-\mu_X)^2]\ \ \ i = 0, 1\\
+	\sigma_{X_i}^2 &= E[(X_i-\mu_{X_i})^2], \ \ \ i = 0, 1\\
 	&= \frac{1}{4}
 \end{align}
 Variance of getting successes in two throws of a die is
 \begin{align}
-	&= E[((X_1-\mu_X) + (X_2-\mu_X))^2]\\
-	&= E[(X_1-\mu_X)^2] + E[(X_2-\mu_X)^2] + E[(X_1-\mu_X)\times(X_2-\mu_X)]\\
-	&= \frac{1}{4} + \frac{1}{4} + 0\\
+	\sigma_{X}^2 &= \sigma_{X_1}^2 + \sigma_{X_2}^2\\
 	&= \frac{1}{2}
 \end{align}
 \end{document}
