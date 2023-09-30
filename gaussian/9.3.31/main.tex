@@ -122,34 +122,19 @@ Defining variables:
 	\hline
 \end{tabular}
 \end{table}
-% Mean and Variance of $X$ are
-% \begin{align}
-% 	\mu &= n\times p\\
-% 	&= 4\\
-% 	\sigma^2 &= n\times p \times q\\
-% 	&= 2
-%
-\textbf{Binomial distribution:} 
+\begin{enumerate}
+\item \textbf{Binomial distribution:} 
 the probability of getting exactly 3 heads is 
 \begin{align}
 	&= \binom{8}{3} \times 0.5^3\times 0.5^{5}\\
 	&= 0.21875
 \end{align}
 $\therefore$ option 2 is correct.\\
-\textbf{Gaussian Distribution:}\\
+\item \textbf{Gaussian Distribution:}\\
 The gaussian distribution for $Y$ is
 \begin{align}
 	p_Y(x) = \frac{1}{\sqrt{2\pi\sigma^2}}e^{\frac{-(x-\mu)^2}{2\sigma^2}}\label{9.3.31}
 \end{align}
-% Defining a random variable Z such that
-% \begin{align}
-% 	Z = \frac{Y-\mu}{\sigma}
-% \end{align}
-% $\therefore$ Z $\sim \gauss{0}{1}$\\
-% Hence gaussian distribution function becomes
-% \begin{align}
-% 	P_Z(x) = \frac{1}{\sqrt{2\pi}}e^{\frac{-x^2}{2}}
-% \end{align}
 For getting 3 exactly heads
 \begin{align}
 	Y &= 3
@@ -165,7 +150,7 @@ Substituting in equation \eqref{9.3.31}, probability for getting exactly 3 heads
 \caption{Binomial distribution vs Gaussian distribution}
 	\label{fig58:_9_3_31}
 \end{figure}
-\textbf{Using Q function:}
+\item \textbf{Using Q function:}
 \begin{align}
 	Y \sim \gauss{\mu}{\sigma^2}
 \end{align}
@@ -187,4 +172,17 @@ including a correction upto 0.5,
 	&= 0.855610 - 0.638181\\
 	&= 0.1974
 \end{align}
+
+\item \textbf{Comparing all three techniques:}\\
+\begin{table}[H]
+\def\arraystretch{1.2}
+\begin{tabular}{|c|c|c|c|}
+	\hline
+	\textbf{Event} &\textbf{Binomial} &\textbf{Gaussian} &\textbf{Q function}\\ 
+	\hline
+	Getting exactly 3 heads &0.21875 &0.35206 &0.1974\\ 
+	\hline
+\end{tabular}
+\end{table}
+\end{enumerate}
 \end{document}
