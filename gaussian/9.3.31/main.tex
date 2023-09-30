@@ -128,7 +128,14 @@ Defining variables:
 % 	&= 4\\
 % 	\sigma^2 &= n\times p \times q\\
 % 	&= 2
-% \end{align}
+%
+\textbf{Binomial distribution:} 
+the probability of getting exactly 3 heads is 
+\begin{align}
+	&= \binom{8}{3} \times 0.5^3\times 0.5^{5}\\
+	&= 0.21875
+\end{align}
+$\therefore$ option 2 is correct.\\
 \textbf{Gaussian Distribution:}\\
 The gaussian distribution for $Y$ is
 \begin{align}
@@ -153,15 +160,31 @@ Substituting in equation \eqref{9.3.31}, probability for getting exactly 3 heads
 	p_Y(3) &= \frac{1}{\sqrt{2\pi\times2}}e^{\frac{-(3-4)^2}{2\times2}}\\
 	&= 0.35206
 \end{align}
-And, by binomial distribution, the probability of getting exactly 3 heads is 
-\begin{align}
-	&= \binom{8}{3} \times 0.5^3\times 0.5^{5}\\
-	&= 0.21875
-\end{align}
-$\therefore$ option 2 is correct.\\
-\textbf{Comparing Binomial and Gaussian distribution:}
 \begin{figure}[H]
 \includegraphics[width=\columnwidth]{./figs/fig.png}
-\caption{Binomial vs Gaussian}
+\caption{Binomial distribution vs Gaussian distribution}
+	\label{fig58:_9_3_31}
 \end{figure}
+\textbf{Using Q function:}
+\begin{align}
+	Y \sim \gauss{\mu}{\sigma^2}
+\end{align}
+CDF of Y is given by
+\begin{align}
+	F_Y(y) &= 1 - \Pr(Y>y)\\
+	&= 1 - \Pr\biggl(\frac{Y-\mu}{\sigma}>\frac{y-\mu}{\sigma}\biggr)
+\end{align}
+As
+\begin{align}
+	\frac{Y-\mu}{\sigma} \sim \gauss{0}{1}\\
+	\implies F_Y(y) = 1 - Q\biggl(\frac{y-\mu}{\sigma}\biggr)
+\end{align}
+including a correction upto 0.5,
+\begin{align}
+	p_Y(2.5<Y<3.5) & = F_Y(3.5) - F_Y(2.5)\\
+	&= Q\biggl( \frac{2.5-\mu}{\sigma} \biggr) - Q\biggl( \frac{3.5-\mu}{\sigma} \biggr)\\
+	&= Q(-1.0608) - Q(-0.3536)\\
+	&= 0.855610 - 0.638181\\
+	&= 0.1974
+\end{align}
 \end{document}
