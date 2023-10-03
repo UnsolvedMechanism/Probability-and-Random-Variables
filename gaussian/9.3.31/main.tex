@@ -1,6 +1,6 @@
 \let\negmedspace\undefined
 \let\negthickspace\undefined
-\documentclass[journal,12pt,twocolumn]{IEEEtran}
+\documentclass[journal,12pt,onecolumn]{IEEEtran}
 \usepackage{cite}
 \usepackage{amsmath,amssymb,amsfonts,amsthm}
 \usepackage{algorithmic}
@@ -151,26 +151,39 @@ Substituting in equation \eqref{9.3.31}, probability for getting exactly 3 heads
 	\label{fig58:_9_3_31}
 \end{figure}
 \item \textbf{Using Q function:}
+Defining a gaussian random variable Z such that
 \begin{align}
-	Y \sim \gauss{\mu}{\sigma^2}
+	Z \sim \gauss{\mu}{\sigma^2}
 \end{align}
-CDF of Y is given by
+Due to continuity correction, $\Pr(Z=x)$ can be approximated as
 \begin{align}
-	F_Y(y) &= 1 - \Pr(Y>y)\\
-	&= 1 - \Pr\biggl(\frac{Y-\mu}{\sigma}>\frac{y-\mu}{\sigma}\biggr)
+	p_Z(x) &\approx \Pr(x-0.5\le Z < x+0.5)\\
+	&\approx \Pr(Z < x+0.5) - \Pr(Z < x-0.5)\\
+	&\approx F_Z(x+0.5)-F_Z(x-0.5)
+\end{align}
+CDF of Z is defined as
+\begin{align}
+	F_Z(x) &= \Pr(Z<x)\\
+	&= \Pr\biggl(\frac{Z-\mu}{\sigma}<\frac{x-\mu}{\sigma}\biggr)
 \end{align}
 As
 \begin{align}
-	\frac{Y-\mu}{\sigma} \sim \gauss{0}{1}\\
-	\implies F_Y(y) = 1 - Q\biggl(\frac{y-\mu}{\sigma}\biggr)
+	\frac{Z-\mu}{\sigma} &\sim \gauss{0}{1}\\
+	\implies F_Z(x) 
+	&= 1 - \Pr\biggl(\frac{Z-\mu}{\sigma}>\frac{x-\mu}{\sigma}\biggr)\\
+	&= \begin{cases}
+		1-Q(\frac{x-\mu}{\sigma}) & x\geq \mu\\
+		Q(\frac{\mu-x}{\sigma}) & x < \mu
+	\end{cases}
 \end{align}
-including a correction upto 0.5,
+Probability in terms of Q function is 
 \begin{align}
-	p_Y(2.5<Y<3.5) & = F_Y(3.5) - F_Y(2.5)\\
-	&= Q\biggl( \frac{2.5-\mu}{\sigma} \biggr) - Q\biggl( \frac{3.5-\mu}{\sigma} \biggr)\\
-	&= Q(-1.0608) - Q(-0.3536)\\
-	&= 0.855610 - 0.638181\\
-	&= 0.1974
+	p_Z(x) \approx Q\biggl(\frac{(x-0.5)-\mu}{\sigma}\biggr) - Q\biggl(\frac{(x+0.5)-\mu}{\sigma}\biggr)
+\end{align}
+$\therefore$ Gaussian approximation for $\Pr(Z = 3)$ is 
+\begin{align}
+	p_Z(3) &\approx Q(0.3536) - Q(1.0608)\\
+	&= 0.2174
 \end{align}
 
 \item \textbf{Comparing all three techniques:}\\
@@ -180,7 +193,7 @@ including a correction upto 0.5,
 	\hline
 	\textbf{Event} &\textbf{Binomial} &\textbf{Gaussian} &\textbf{Q function}\\ 
 	\hline
-	Getting exactly 3 heads &0.21875 &0.35206 &0.1974\\ 
+	Getting exactly 3 heads &0.21875 &0.35206 &0.2174\\ 
 	\hline
 \end{tabular}
 \end{table}
