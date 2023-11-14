@@ -115,75 +115,84 @@ Covariance matrix, $\Sigma$ is defined as
 \begin{align}
 %	\Sigma &= E[(X-E[X])(Y-E[Y])]\\
 %	&\text{as in this case X = Y}\\
-	\Sigma &= E[(X-E[X])(X-E[X])^\top]\\
-	&= \frac{1}{N-1}\sum_{i=1}^N(X_i-\overline{X})(X_i-\overline{X})^\top\\
+	\Sigma &= E[(\vec{X}-E[\vec{X}])(\vec{X}-E[\vec{X}])^\top]\\
+	% &= \frac{1}{N-1}\sum_{i=1}^N(X_i-\overline{X})(X_i-\overline{X})^\top\\
 	&\text{and,}\\
-	S_1 &= \frac{1}{4}\sum_{i=1}^5(X_i-\overline{X_1})(X_i-\overline{X_1})^\top\\
-	S_2 &= \frac{1}{4}\sum_{i=6}^{10}(X_i-\overline{X_2})(X_i-\overline{X_2})^\top
+	S_1 &= \frac{1}{4}\sum_{i=1}^5(\vec{X_i}-\vec{\overline{X_1}})(\vec{X_i}-\vec{\overline{X_1}})^\top\\
+	S_2 &= \frac{1}{4}\sum_{i=6}^{10}(\vec{X_i}-\vec{\overline{X_2}})(\vec{X_i}-\vec{\overline{X_2}})^\top
 \end{align}
-$\therefore$ $S_1$ and $S_2$ represent covariance matrix for their respective samples\\
+$\therefore$ $S_1$ and $S_2$ represent sample covariance matrix for their respective samples\\
 \begin{enumerate}
 	\item \textbf{For option 1 and 2:}\\
-Given,
-\begin{align}
-	&X_i \sim N_3(\mu,\Sigma)\\
-	\implies &\overline{X} \sim N_3(\mu, \Sigma/5)\\
-	\therefore &\overline{X_1} \sim N_3(\mu,S_1/5)
-\end{align}
-converting to chi-squared distribution,
-\begin{align}
-	\implies &\frac{(\overline{X_1} - \mu)^2}{S_1/5} \sim \chi^2_3
-\end{align}
-As $\overline{X_1}-\mu$ represents a trivariate distribution, 
-\begin{align}
-	(\overline{X_1}-\mu)^2 = (\overline{X_1}-\mu)^{\top}(\overline{X_1}-\mu),
-\end{align}
-and bringing $S_1$ in numerator,
-\begin{align}
-	\implies 5(\overline{X_1}-\mu)^{\top}S_1^{-1}(\overline{X_1}-\mu) \sim \chi^2_3
-\end{align}
-%Converting $\chi^2$ distribution into F-distribution by dividing it with the degree of freedom,
-%\begin{align}
-%	\implies \frac{5}{3}(\overline{X_1}-\mu)^{\top}\Sigma^{-1}(\overline{X_1}-\mu) \sim \chi^2_3\\
-%\end{align}
-F distribution is defined as 
-\begin{align}
-	\frac{X/d_1}{Y/d_2} &\sim F(d_1,d_2) &\text{ where}\\
-	X &\sim \chi^2_{d_1} \text{ and } Y \sim \chi^2_{d_2}
-\end{align}
-are independant chi-square distributions\\
-Let X represent be a $\chi^2_3$ variable, then
-\begin{align}
-	\therefore \frac{X/3}{Y/d} &\sim F(3,d) \ \  \text{and}\\
-	 \frac{Y/d}{X/3} &\sim F(d,3) \ \ \ \forall\ \ \  d \in \mathbb{N}
-\end{align}
-Hence for $d$ = 2,
-\begin{align}
-	\frac{5}{3}(\overline{X_1}-\mu)^{\top}\Sigma^{-1}(\overline{X_1}-\mu) &\sim F(3,2)\\
-	\therefore \frac{5}{6}(\overline{X_1}-\mu)^{\top}\Sigma^{-1}(\overline{X_1}-\mu) &\sim F(3,2), \text{and similarly}\\
-	\frac{6}{5(\overline{X_1}-\mu)^{\top}\Sigma^{-1}(\overline{X_1}-\mu)} &\sim F(2,3)
-\end{align}
-Hence, \textbf{option 1 and 2 are true}
+% Given,
+% \begin{align}
+% 	&X_i \sim N_3(\mu,\Sigma)\\
+% 	\implies &\overline{X} \sim N_3(\mu, \Sigma/5)\\
+% 	\therefore &\overline{X_1} \sim N_3(\mu,S_1/5)
+% \end{align}
+% converting to chi-squared distribution,
+% \begin{align}
+% 	\implies &\frac{(\overline{X_1} - \mu)^2}{S_1/5} \sim \chi^2_3
+% \end{align}
+% As $\overline{X_1}-\mu$ represents a trivariate distribution, 
+% \begin{align}
+% 	(\overline{X_1}-\mu)^2 = (\overline{X_1}-\mu)^{\top}(\overline{X_1}-\mu),
+% \end{align}
+% and bringing $S_1$ in numerator,
+% \begin{align}
+% 	\implies 5(\overline{X_1}-\mu)^{\top}S_1^{-1}(\overline{X_1}-\mu) \sim \chi^2_3
+% \end{align}
+% %Converting $\chi^2$ distribution into F-distribution by dividing it with the degree of freedom,
+% %\begin{align}
+% %	\implies \frac{5}{3}(\overline{X_1}-\mu)^{\top}\Sigma^{-1}(\overline{X_1}-\mu) \sim \chi^2_3\\
+% %\end{align}
+% F distribution is defined as 
+% \begin{align}
+% 	\frac{X/d_1}{Y/d_2} &\sim F(d_1,d_2) &\text{ where}\\
+% 	X &\sim \chi^2_{d_1} \text{ and } Y \sim \chi^2_{d_2}
+% \end{align}
+% are independant chi-square distributions\\
+% Let X represent be a $\chi^2_3$ variable, then
+% \begin{align}
+% 	\therefore \frac{X/3}{Y/d} &\sim F(3,d) \ \  \text{and}\\
+% 	 \frac{Y/d}{X/3} &\sim F(d,3) \ \ \ \forall\ \ \  d \in \mathbb{N}
+% \end{align}
+% Hence for $d$ = 2,
+% \begin{align}
+% 	\frac{5}{3}(\overline{X_1}-\mu)^{\top}\Sigma^{-1}(\overline{X_1}-\mu) &\sim F(3,2)\\
+% 	\therefore \frac{5}{6}(\overline{X_1}-\mu)^{\top}\Sigma^{-1}(\overline{X_1}-\mu) &\sim F(3,2), \text{and similarly}\\
+% 	\frac{6}{5(\overline{X_1}-\mu)^{\top}\Sigma^{-1}(\overline{X_1}-\mu)} &\sim F(2,3)
+% \end{align}
+% Hence, \textbf{option 1 and 2 are true}
 \item \textbf{For option 3 and 4}\\
 By defination, Wishart distribution is given by:
 \begin{align}
-	x_i &\sim N_p(\mu,\Sigma) \ \ \ \forall \ \ \ 1 \leq i \leq n\\
+	\vec{x_i} &\sim N_p(\mu,\Sigma) \ \ \ \forall \ \ \ 1 \leq i \leq n\\
 	M &= \sum_{i=1}^n x_ix_i^\top \sim W_p(\Sigma,n)
 \end{align}
-where p denotes order and n denotes the degree of freedom
+where p denotes order and n denotes the degree of freedom\\
+Pdf of Wishart distribution is given by:
 \begin{align}
-	X_i &\sim N_3(\mu,\Sigma) \ \ \forall \ \ 1\leq i\leq 10\\
-	\implies Y_i &= X_i - \overline{X_1} \sim N_3(0,\Sigma) \ \ \forall\ \  1\leq i\leq 5, \text{and}\\
-	Y_i &= X_i - \overline{X_2} \sim N_3(0,\Sigma) \ \ \forall\ \  6\leq i\leq 10
+	f(M) = \frac{1}{2^(\frac{np}{2})\Gamma_p(\frac{n}{2})|\Sigma|^\frac{n}{2}}|M|^\frac{n-p-1}{2}e^{\frac{-1}{2}tr(\Sigma^{-1}M)}
+\end{align}
+where
+\begin{align}
+	\Gamma_p\biggl(\frac{n}{2}\biggr) = \pi^{\frac{p(p-1)}{4}}\prod_{j=1}^{p}\Gamma\biggl(\frac{n}{2}-\frac{j-1}{2}\biggr)
 \end{align}
 \begin{align}
-	\therefore M_1 &= S_1 = \sum_{i=1}^{5}Y_iY_i^\top \sim W_{3}(\Sigma,4), \text{and}\\
-	M_2 &= S_2 = \sum_{i=6}^{10}Y_iY_i^\top \sim W_{3}(\Sigma,4)\\
+	\vec{X_i} &\sim N_3(\mu,\Sigma) \ \ \forall \ \ 1\leq i\leq 10\\
+	\implies \vec{Y_i} &= \vec{X_i} - \vec{\overline{X_1}} \sim N_3(0,\Sigma) \ \ \forall\ \  1\leq i\leq 5, \text{and}\\
+	\vec{Y_i} &= \vec{X_i} - \vec{\overline{X_2}} \sim N_3(0,\Sigma) \ \ \forall\ \  6\leq i\leq 10
+\end{align}
+\begin{align}
+	\therefore M_1 &= 4\vec{S_1} = \sum_{i=1}^{5}\vec{Y_i}\vec{Y_i}^\top \sim W_{3}(\Sigma,4), \text{and}\\
+	M_2 &= 4\vec{S_2} = \sum_{i=6}^{10}\vec{Y_i}\vec{Y_i}^\top \sim W_{3}(\Sigma,4)\\
 	\therefore M_1+M_2 &\sim W_3(\Sigma,4+4)\\
-	\implies S_1+S_2 &\sim W_3(\Sigma,8)
+	\implies 4\vec{S_1}+4\vec{S_2} &\sim W_3(\Sigma,8)
 \end{align}
-		$\therefore \lambda(S_1+S_2)$ follow Wishart distribution with order 3 and 8 degrees of freedom where $\lambda \in \mathbb{R}$\\
+$\therefore 4(\vec{S_1}+\vec{S_2})$ follows a Wishart distribution with order 3 and 8 degrees of freedom\\
+and,\\
+$5(\vec{S_1}+\vec{S_2}) = \frac{5}{4}(M_1+M_2)$ also follows a Wishart distribution with order 3 and 8 degrees of freedom\\
 Hence, \textbf{option 3 is True and option 4 is False}
-
 \end{enumerate}
 \end{document}
